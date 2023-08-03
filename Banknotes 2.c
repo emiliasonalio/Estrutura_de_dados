@@ -10,17 +10,17 @@ int main() {
     scanf("%d", &valor);
     printf("%d\n", valor);
 
-    for(i = 0; i < size; i++); //looping que percorre o vetor
+    for(i = 0; i < size; i++){ //looping que percorre o vetor
         do {
             if(valor <= valorNota && valor > 0){
 
                 valor = valor - valorNota[i];
                 quantNota++;
             }
-        } while (valor<valorNota); //looping que repete a lógica para cada variável (nota)
+        } while (valor>valorNota[i]); //looping que repete a lï¿½gica para cada variï¿½vel (nota)
+        printf("%d notas(s) de R$ %d,00\n", quantNota, valorNota[i]);
+    }
 
-
-        printf("%d notas(s) de R$ %d,00", quantNota, valorNota[i]);
 
     return 0;
 }
