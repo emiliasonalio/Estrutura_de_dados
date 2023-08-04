@@ -11,13 +11,14 @@ int main() {
     printf("%d\n", valor);
 
     for(i = 0; i < size; i++){ //looping que percorre o vetor
+        quantNota = 0;
         do {
-            if(valor <= valorNota && valor > 0){
+            if(valor >= valorNota && valor > 0){
 
                 valor = valor - valorNota[i];
                 quantNota++;
             }
-        } while (valor>valorNota[i]); //looping que repete a l�gica para cada vari�vel (nota)
+        } while (valor<valorNota[i]); //looping que repete a l�gica para cada vari�vel (nota)
         printf("%d notas(s) de R$ %d,00\n", quantNota, valorNota[i]);
     }
 
