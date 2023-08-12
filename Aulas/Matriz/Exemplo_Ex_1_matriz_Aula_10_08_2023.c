@@ -11,6 +11,7 @@ int main (){
     int matriz[numLinhas][numColunas];
     int valor = 0;
 
+    //preencher matriz
     for(int linha = 0; linha < numLinhas; linha++){
         for(int coluna = 0; coluna < numColunas ; coluna++){
             matriz[linha][coluna] = rand() % 100;
@@ -19,6 +20,7 @@ int main (){
     printf("\n");
     }
 
+    // achar maior valor
     int maior = matriz [0][0];
     int maior_linha = 0;
     int maior_coluna = 0;
