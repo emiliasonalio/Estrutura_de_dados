@@ -10,27 +10,28 @@ float notasAluno (float nota1, float nota2, float nota3, char metodo);
 
 int main (){
 
-    float nota1, nota2, nota3, modalidade;
+    float n1, n2, n3;
+    float media; 
 
-    printf("Insira as notas do aluno e em seguida o tipo de média (aritimética = A; ponderada = P; harmônica = H)");
+    printf("Insira as notas do aluno:\n");
 
-    scanf("%f" &nota1);
-    scanf("%f" &nota2);
-    scanf("%f" &nota3);
-    scanf("%c" &modalidade);
+    scanf("%f""%f""%f", &n1, &n2, &n3);
 
-    printf("A nota final é %f", notasAluno(nota1, nota2, nota3, modalidade));
+    printf("A media aritimetica e %.2f\n", notasAluno(n1, n2, n3, 'A'));
+    printf("A media ponderada e %.2f\n", notasAluno(n1, n2, n3, 'P'));
+    printf("A media harmonica e %.2f\n", notasAluno(n1, n2, n3, 'H'));
 
+    return 0;
 }
 float notasAluno (float nota1, float nota2, float nota3, char metodo){
     if (metodo == 'A'){
-        float media = (nota1 + nota2 + nota3)/3;
+        return (nota1 + nota2 + nota3)/3;
     }
     else if (metodo == 'P'){
-        float media = ((nota1 * 5)+(nota2 * 3)+(nota3 * 2))/10
+        return ((nota1 * 5)+(nota2 * 3)+(nota3 * 2))/10;
     }
     else if (metodo == 'H'){
-        float media = 3 / ((1/nota1) + (1/nota2) + (1/nota3));
+        return (3 / ((1/nota1) + (1/nota2) + (1/nota3)));
     }
 }
         
