@@ -10,15 +10,25 @@ int main(){
 
         for (int i = 0; i < n; i ++){
             for (int j = 0; j < n ; j++){
-                matriz[i][j] = rand() % 20;
+                matriz[i][j] = rand() % 100;
                 printf("%4d", matriz[i][j]);
             }
             printf("\n");
         }
-        for (int i = 0; i < n; i ++){
+printf("\n\n");
+
             for (int j = 0; j < n; j++){
-                matriz[0][j] = matriz[i][4];
-                
+                int aux = matriz[0][j];
+                matriz[0][j] = matriz[j][n-1];
+                matriz[j][n-1] = aux;
             }
+        printf("Matriz modificada:\n");
+        for (int i = 0; i < n; i ++){
+            for (int j = 0; j < n ; j++){
+                printf("%4d", matriz[i][j]);
+            }
+        printf("\n");
         }
-}
+
+        return 0;
+        }

@@ -12,14 +12,18 @@ int main (){
 
     float n1, n2, n3;
     float media; 
+    char tipo;
 
     printf("Insira as notas do aluno:\n");
 
     scanf("%f""%f""%f", &n1, &n2, &n3);
+    scanf(" %c", &tipo);
 
-    printf("A media aritimetica e %.2f\n", notasAluno(n1, n2, n3, 'A'));
-    printf("A media ponderada e %.2f\n", notasAluno(n1, n2, n3, 'P'));
-    printf("A media harmonica e %.2f\n", notasAluno(n1, n2, n3, 'H'));
+    printf("A media e %.2f\n", notasAluno(n1, n2, n3, tipo));
+
+    //printf("A media aritimetica e %.2f\n", notasAluno(n1, n2, n3, 'A'));
+    //printf("A media ponderada e %.2f\n", notasAluno(n1, n2, n3, 'P'));
+    //printf("A media harmonica e %.2f\n", notasAluno(n1, n2, n3, 'H'));
 
     return 0;
 }
@@ -32,6 +36,9 @@ float notasAluno (float nota1, float nota2, float nota3, char metodo){
     }
     else if (metodo == 'H'){
         return (3 / ((1/nota1) + (1/nota2) + (1/nota3)));
+    }
+    else{
+        return -1;
     }
 }
         
