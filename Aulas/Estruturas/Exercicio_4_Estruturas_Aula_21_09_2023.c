@@ -24,7 +24,7 @@ int area (int lado, int h){
 }
 
 int diagonal (int lado, int h){
-    int d = sqrt(pow((lado),2))+ pow((h),2));
+    int d = sqrt(pow((lado),2))+ pow((h),2);
     return d;
 }
 int perimetro (int lado, int h){
@@ -33,26 +33,27 @@ int perimetro (int lado, int h){
 }
 
 int main(){
+    struct ponto pontoA;
+    struct ponto pontoB;
     struct retangulo;
-    struct ponto;
     int base, altura;
 
     printf("Declare o primeiro ponto do Retângulo:");
-    scanf("%d%d", &A.x, &A.y);
+    scanf("%d%d", &pontoA.x, &pontoA.y);
     printf("Declare o segundo ponto do Retângulo:");
-    scanf("%d%d", &B.x, &B.y);
+    scanf("%d%d", &pontoB.x, &pontoB.y);
 
-    altura = abs(B.y - A.y);
-    base = abs(B.x - A.x);
+    altura = abs(pontoB.y - pontoA.y);
+    base = abs(pontoB.x - pontoA.x);
 
     int A = area(base, altura);
-    printf("A area e: %d", A)
+    printf("A area e: %d", A);
 
     int D = diagonal(base, altura);
     printf("A diagonal e: %d", D);
 
     int P = perimetro(base, altura);
-    printf("O perimetro e: %d, P");
+    printf("O perimetro e: %d", P);
 
     return 0;
 }
