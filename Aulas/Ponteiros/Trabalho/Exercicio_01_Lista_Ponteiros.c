@@ -7,21 +7,18 @@
 #include<string.h>
 
 int LeitorPalavras (char *palavra){
-    int tamanho;
-    scanf("%c", &palavra);
-    //printf("O tamanho da palavra é %zu", strlen(palavra)); //%zu formato especifico para printar strlen()
-    tamanho = strlen(palavra);
-    printf("O tamanho da palavra eh");    
-    return tamanho;
+    return strlen(palavra);
 }
 
 int main(){
 
-    char lerPalavra;
+    char palavra[16];
+    int tamanho;
 
     printf("Digite uma palavra:\n");
-    scanf("%c", &lerPalavra);
-    LeitorPalavras(lerPalavra);
+    scanf("%s", palavra);
+    tamanho = LeitorPalavras(palavra);
+    printf("O tamanho da palavra eh %d", tamanho); 
 
     return 0;
 }
