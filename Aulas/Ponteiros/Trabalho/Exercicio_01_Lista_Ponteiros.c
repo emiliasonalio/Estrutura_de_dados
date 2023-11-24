@@ -7,7 +7,15 @@
 #include<string.h>
 
 int LeitorPalavras (char *palavra){
-    return strlen(palavra);
+    int cont;
+    char espaco;
+    int i = 0;
+
+    while (palavra[i] != '\0'){
+        cont++;
+        i++;
+    }
+    return cont;
 }
 
 int main(){

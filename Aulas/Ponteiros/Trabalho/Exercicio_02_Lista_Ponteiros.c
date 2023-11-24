@@ -1,7 +1,6 @@
 //Elabore uma função que receba duas strings como parâmetros e verifique se a segunda string ocorre dentro da primeira. Use
 //aritmética de ponteiros para acessar os caracteres das strings.
 
-// PROBLEMA: LENDO LIXO NO PRINTF
 #include<stdio.h>
 #include<locale.h>
 #include<stdlib.h>
@@ -14,29 +13,32 @@ int comparar (char *str1, char *str2){
     
     int x = 20;
     int tam1, tam2;
+    int cont = 0;
     tam1 = LeitorPalavras(str1);
     tam2 = LeitorPalavras(str2);
-    printf("%d\n", tam1);
-    printf("%d\n", tam2);
     char comp[x];
        
     if(tam1 < tam2){
-        return 0;
+        for(int i = 0; i< tam2 ; i++){
+            if(str1[0] == str2[i]){
+                for(int j = i; j < tam1; j++){
+                    if(str1[j] == str2[j]){
+                        comp[j] = str1[j];
+                        cont++;
+                    }
+                }  
+            }
+            if (tam1 == cont && str1 == compjo){
+                return 1;
+            }
+        }     
     }
-    else if(tam1 > tam2){
-
-        for(int i = 0; i< tam1 ; i++){
-            if(str1[i] == str2[i]){
-                comp[i] = str1[i];
-           }
-        }
-        printf("A palavra eh %s", comp);
+    else if (tam1 > tam2){
+        return 0;
     }
     else {
-        return 0;
+        return 1;
     }
-    
-    return 1;
 }
 
 int main(){
@@ -50,7 +52,22 @@ char str2[x];
     printf("Escreva a segunda palavra:");
     scanf("%s", str2);
 
-    comparar(str1, str2);
+    
+    int comparacao = comparar(str1, str2);
+    if(comparacao == 0){
+        printf("A palvra 2 nao contem a palavra 1.");
+    }
+    else if(comparacao == 1){
+        printf("A palvra 2 contem a palavra 1.");
+    }
+    
+    int comparacao2 = comparar(str2, str1);
+    if(comparacao2 == 0){
+        printf("A palvra 1 nao contem a palavra 2.");
+    }
+    else if(comparacao2 == 1){
+        printf("A palvra 1 contem a palavra 2.");
+    }
 
 
 
