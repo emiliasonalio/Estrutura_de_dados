@@ -28,7 +28,7 @@ int comparar (char *str1, char *str2){
                     }
                 }  
             }
-            if (tam1 == cont && str1 == compjo){
+            if (tam1 == cont && str1 == comp[j]){
                 return 1;
             }
         }     

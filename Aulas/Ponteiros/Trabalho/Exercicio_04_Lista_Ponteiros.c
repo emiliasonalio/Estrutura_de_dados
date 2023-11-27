@@ -12,7 +12,7 @@ int MaxMin (int i, int vetor[]){
     
     for (int a = 0; a < i; a++){
         if (vetor[a] > *max){
-            *max = vetor[a];
+            *max = &vetor[a];
         }
     }
     printf("O maior valor é: %d", *max);
@@ -20,7 +20,7 @@ int MaxMin (int i, int vetor[]){
     int **min = &max; 
 
     for (int a = 0; a < i; a++){
-        if (vetor[a] < *min){
+        if (vetor[a] < **min){
             **min = &vetor[a];
         }
     }
@@ -30,11 +30,11 @@ int MaxMin (int i, int vetor[]){
 int main(){
 
     int i;
-    int vetor[i];
-
+    
     printf("Informe o tamanho do vetor:\n");
     scanf("%d", &i);
 
+    int vetor[i];
     printf("Informe o vetor:\n");
         for(int a = 0; a <= i; a++){
             scanf("%d", &vetor[a]);
