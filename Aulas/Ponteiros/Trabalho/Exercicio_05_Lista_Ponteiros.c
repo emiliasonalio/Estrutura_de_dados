@@ -14,12 +14,34 @@ e encontraPiorAluno e imprima os detalhes desses alunos (nome, matrícula e nota
 #include<locale.h>
 
 struct Aluno{
-    char[50] nome;
+    char nome[50];
     int matricula;
     float nota;
+};
+
+typedef struct Aluno alunos;
+
+void cadastrarAlunos(alunos *info){
+
+ for(int i = 0; i < 3; i++){
+
+        printf("Digite o nome do aluno:");
+        scanf("%s", info[i].nome);
+        printf("Digite a matricula do aluno:");
+        scanf("%d", info[i].matricula);
+        printf("Digite a nota do aluno:");
+        scanf("%f", info[i].nota);
+        
+        printf("[%s][%d][%.1f]\n", *info[i].nome, *info[i].matricula, *info[i].nota);
+    }
 }
 
-main(){
+int main(){
+    
+    alunos info[3];
+    cadastrarAlunos(&info[3]);
+
+   
     
 
 
