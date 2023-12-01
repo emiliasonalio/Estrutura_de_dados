@@ -25,27 +25,74 @@ void cadastrarAlunos(alunos *info){
 
  for(int i = 0; i < 3; i++){
 
-        printf("Digite o nome do aluno:");
-        scanf("%s", info[i].nome);
-        printf("Digite a matricula do aluno:");
-        scanf("%d", info[i].matricula);
-        printf("Digite a nota do aluno:");
-        scanf("%f", info[i].nota);
+        printf("Digite o nome do aluno:\n");
+        scanf("%s", &info[i].nome);
+        printf("Digite a matricula do aluno:\n");
+        scanf("%d", &info[i].matricula);
+        printf("Digite a nota do aluno:\n");
+        scanf("%f", &info[i].nota);
         
-        printf("[%s][%d][%.1f]\n", *info[i].nome, *info[i].matricula, *info[i].nota);
+        printf("[%s][%d][%.1f]\n", info[i].nome, info[i].matricula, info[i].nota);
     }
 }
 
+alunos* encontrarMelhorAluno(alunos *info, int tam){
+    printf("procurando melhor aluno\n");
+    int maiorNota = info[0].nota;
+    alunos melhorAluno;
+    int pos = 0;
+
+    for(int i = 0; i < tam; i++){
+        if (info[i].nota > maiorNota){
+            printf("maior nota: %.2f\n", maiorNota);
+            maiorNota = info[i].nota;
+            pos = i;
+        }
+    }
+
+    melhorAluno = info[pos];
+
+
+    return melhorAluno;
+}
+
+alunos* encontrarPiorAluno(alunos *info, int tam){
+    printf("procurando pior aluno\n");
+    int menorNota = info[0].nota;
+    alunos piorAluno;
+    int pos = 0;
+
+    for(int i = 0; i < tam; i++){
+        if (info[i].nota < menorNota){
+            printf("menor nota: %.2f\n", menorNota);
+            menorNota = info[i].nota;
+            pos = i;
+        }
+    }
+
+    piorAluno = info[pos];
+
+
+    return piorAluno;
+}
+
+
 int main(){
     
-    alunos info[3];
-    cadastrarAlunos(&info[3]);
+    int tam = 3;
+    alunos info[3] = {
+        {"Emilia", 111, 8},
+        {"Andre", 222, 9},
+        {"Joao", 333, 10}
 
-   
+    };
+    //cadastrarAlunos(info);
     
+    alunos *melhorAluno = encontrarMelhorAluno(info, tam);
+    printf("Melhor aluno:\nNome: %s\nMatricula: %d\nNota: %.2f\n", melhorAluno->nome, melhorAluno->matricula, melhorAluno->nota);  
 
-
-
+    alunos *piorAluno = encontrarPiorAluno(info, tam);
+    printf("Pior aluno:\nNome: %s\nMatricula: %d\nNota: %.2f\n", piorAluno->nome, piorAluno->matricula, piorAluno->nota);
 
     return 0;
 }
