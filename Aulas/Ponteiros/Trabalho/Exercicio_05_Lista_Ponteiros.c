@@ -36,63 +36,44 @@ void cadastrarAlunos(alunos *info){
     }
 }
 
-alunos* encontrarMelhorAluno(alunos *info, int tam){
-    printf("procurando melhor aluno\n");
+alunos encontrarMelhorAluno(alunos *info, int tam){
     int maiorNota = info[0].nota;
-    alunos melhorAluno;
     int pos = 0;
 
     for(int i = 0; i < tam; i++){
         if (info[i].nota > maiorNota){
-            printf("maior nota: %.2f\n", maiorNota);
             maiorNota = info[i].nota;
             pos = i;
         }
     }
 
-    melhorAluno = info[pos];
-
-
-    return melhorAluno;
+    return info[pos];
 }
 
-alunos* encontrarPiorAluno(alunos *info, int tam){
-    printf("procurando pior aluno\n");
+alunos encontrarPiorAluno(alunos *info, int tam){
     int menorNota = info[0].nota;
-    alunos piorAluno;
     int pos = 0;
 
     for(int i = 0; i < tam; i++){
         if (info[i].nota < menorNota){
-            printf("menor nota: %.2f\n", menorNota);
             menorNota = info[i].nota;
             pos = i;
         }
     }
-
-    piorAluno = info[pos];
-
-
-    return piorAluno;
+    return info[pos];
 }
-
 
 int main(){
     
     int tam = 3;
-    alunos info[3] = {
-        {"Emilia", 111, 8},
-        {"Andre", 222, 9},
-        {"Joao", 333, 10}
-
-    };
-    //cadastrarAlunos(info);
+    alunos info[3];
+    cadastrarAlunos(info);
     
-    alunos *melhorAluno = encontrarMelhorAluno(info, tam);
-    printf("Melhor aluno:\nNome: %s\nMatricula: %d\nNota: %.2f\n", melhorAluno->nome, melhorAluno->matricula, melhorAluno->nota);  
+    alunos melhorAluno = encontrarMelhorAluno(info, tam);
+    printf("Melhor aluno:\nNome: %s\nMatricula: %d\nNota: %.2f\n", melhorAluno.nome, melhorAluno.matricula, melhorAluno.nota);  
 
-    alunos *piorAluno = encontrarPiorAluno(info, tam);
-    printf("Pior aluno:\nNome: %s\nMatricula: %d\nNota: %.2f\n", piorAluno->nome, piorAluno->matricula, piorAluno->nota);
+    alunos piorAluno = encontrarPiorAluno(info, tam);
+    printf("Pior aluno:\nNome: %s\nMatricula: %d\nNota: %.2f\n", piorAluno.nome, piorAluno.matricula, piorAluno.nota);
 
     return 0;
 }

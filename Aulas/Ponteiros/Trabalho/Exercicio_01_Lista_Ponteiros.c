@@ -8,7 +8,6 @@
 
 int LeitorPalavras (char *palavra){
     int cont;
-    char espaco;
     int i = 0;
 
     while (palavra[i] != '\0'){
