@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include<locale.h>
 //RESOLUÇÃO DO PROFS
-int main(int argc, char constant *argv[]){
+/*int main(int argc, char constant *argv[]){
 
     int a = 10;
     int b = 20;
@@ -17,11 +17,10 @@ int main(int argc, char constant *argv[]){
     
     return 0;
 }
-
-
+*/
 
 //MINHA RESOLUÇÃO
-/*int main (){
+int main (){
     int *var1;
     int *var2;
 
@@ -33,4 +32,4 @@ int main(int argc, char constant *argv[]){
         }
 
     return 0;
-}*/
+}
